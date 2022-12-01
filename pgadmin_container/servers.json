@@ -1,0 +1,14 @@
+{
+    "Servers": {
+        "inteletivo": {
+            "Name": "transportadora_vietna",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "tr_vietna",
+            "Host": "postgres",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+        
+    }
+}

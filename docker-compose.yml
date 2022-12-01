@@ -1,0 +1,42 @@
+version: "3.3"
+
+services:
+
+  postgres_db:
+    container_name: postgres
+    hostname: postgres
+    image: postgres:14.5-alpine
+    env_file:
+        - ./.env.dev.db
+    volumes:
+      - $PWD/postgres_container/pgdata:/var/lib/postgresql/data
+      - $PWD/postgres_container/feedDB.sh:/docker-entrypoint-initdb.d/10-init.sh
+      # if you want some data restore, point to your backup
+      - $PWD/postgres_container/backups:/db_backup
+      # point docker to directory with your config
+      - $PWD/postgres_container/configs:/db_config
+    networks:
+      - backend
+    ports:
+      - 15433:5432
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    hostname: pgadmin
+    container_name: pgadmin
+    restart: always
+    env_file:
+        - ./.env.dev.pgadmin
+    depends_on:
+      - postgres_db
+    volumes:
+      - ./pgadmin_container/servers.json:/pgadmin4/servers.json
+      #- ./pgadmin_container/entrypoint.sh:/docker-entrypoint-initdb.d/10-entrypoint.sh
+    ports:
+      - "8081:80"
+    networks:
+      - backend
+
+networks: 
+  backend:
+    driver: bridge

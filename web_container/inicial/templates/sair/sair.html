@@ -1,0 +1,44 @@
+
+{% include 'standard/base.html' %}
+{% load static %}
+
+<html>
+    <head>
+        <title>Fornecedores Disponíveis</title>
+        <link href="{% static '_css/menu_ini.css' %}" rel="stylesheet">
+        <link href="{% static '_css/inclusao.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+        <!-- Top navigation -->
+            <div class="topnav">
+            <!-- Centered link -->
+                <div class="topnav-centered">
+                    <a class="active" href="#">Sair</a>
+                </div>
+                <!-- Left-aligned links (default) -->
+                <a href="/listar_transportadoras/listar/">Listagem de Filiais</a>
+                <a href="/listar_produtos/listar/">Listagem de Produtos</a>
+                <!-- Right-aligned links -->
+                <div class="topnav-right">
+                <a href="/gerenciar_pedidos/lista_pedidos/">Gerenciar Pedidos</a>
+                <a href="/listar_transportadoras/listar/">Sair</a>
+                </div>
+            </div>
+            <div id="janela_formulario">
+                <form method="POST" action="/listar_produtos/listar/">
+                    {% csrf_token %}
+                    <h4>Tem certeza que deseja sair?</h4>
+                    <input type="submit" value="Cancelar">
+                </form>
+                <form method="POST" action="/">
+                {% csrf_token %}
+                    <input type="submit" value="Sair">
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
+
+{% include 'standard/footer.html' %}
+

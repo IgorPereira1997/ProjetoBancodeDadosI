@@ -1,0 +1,55 @@
+{% include 'standard/base.html' %}
+{% load static %}
+
+<html>
+    <head>
+        <title>Login</title>
+        <link href="{% static '_css/login.css' %}" rel="stylesheet">
+        <link href="{% static '_css/menu_ini.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+        <!-- Top navigation -->
+            <div class="topnav">
+                <!-- Centered link -->
+                <div class="topnav-centered">
+                    <a class="active" href="/login/cliente/">Entrar como Cliente</a>
+                </div>
+                <!-- Left-aligned links (default) -->
+                <a href="/">Home</a>
+                <a href="/login/fornecedor/">Entrar como Fornecedor</a>
+                <!-- Right-aligned links -->
+                <div class="topnav-right">
+                    <a href="/admin/">Entrar como Administrador</a>
+                    <a href="/contato/email/">Fale Conosco</a>
+                </div>
+            </div>
+            <div id="janela_login">
+            <form action="/login/cliente/" method="POST">
+            {% csrf_token %}
+                <h2>Tela de Login para Cliente</h2>
+                <input type="text" name="user_cliente" placeholder="Nome de Usuário">
+                <input type="password" name="key_password_cliente" placeholder="Senha">
+                <input type="submit" name="submit_cliente" value="Login">
+                {% if logincliente == 'Diferente' %}
+                    <p>{{ msg }}</p>
+                {% endif %}
+            </form>
+            <form action="/login/recuperar_senha/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="flag" value="0">
+                <input type="hidden" name="op" value="1"> 
+                <input type="submit" value="Recuperar Senha">
+            </form>
+            <form action="/criar_perfil_ini/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="flag" value="0">
+                <input type="hidden" name="op" value="1"> 
+                <input type="submit" value="Criar Cliente">
+            </form>
+        </div>
+        </main>
+    </body>
+</html>
+
+{% include 'standard/footer.html' %}
