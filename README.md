@@ -90,3 +90,4 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
 
 8 - As informações para login do pgadmin são as descritas no arquivo .env.(dev/prod).pgadmin respectivamente por PGADMIN_DEFAULT_EMAIL e PGADMIN_DEFAULT_PASSWORD, e o acesso do servidor encontrado no pgadmin pode ser feito com o parâmetro POSTGRES_PASSWORD encontrado no arquivo .env.(dev/prod).db.
 
+9 - Salvando arquivos do pgadmin, como diagrama entidade-relacionamento, backups, entre outros, pode ser encontrado na pasta postgres_container/storage/<PGADMIN_DEFAULT_EMAIL(@ trocado por _)>/, para facilitar acesso de quaisquer manipulações que tenham sido feitas. PGADMIN_DEFAULT_EMAIL é aquele definido no arquivo .env.(dev/prod).pgadmin.
