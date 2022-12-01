@@ -75,8 +75,14 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
         psql -U nome_usuario -d nome_banco -f /db_backup/db_bd2.sql
 
 
-5 - Com o docker instalado, para levantar o projeto, há duas alternativas, development (dev) e production (prod). Para levantar os containers do projeto, faça:
+5 - Altere o arquivo servers.json existente na pasta pgadmin_container com o usuário escolhido no arquivo .env.(dev/prod).db no parâmetro POSTGRES_USER, da seginte forma, sem o <>:
+
+    "Username": "<nome escolhido no POSTGRES_USER>",
+
+6 - Com o docker instalado, para levantar o projeto, há duas alternativas, development (dev) e production (prod). Para levantar os containers do projeto, faça:
 
     DEV:  docker compose -f docker-compose.yml up -d   
     PROD: docker compose -f docker-compose.prod.yml up -d
+
+7 - As informações para login do pgadmin são as descritas no arquivo .env.(dev/prod).pgadmin respectivamente por PGADMIN_DEFAULT_EMAIL e PGADMIN_DEFAULT_PASSWORD, e o acesso do servidor encontrado no pgadmin pode ser feito com o parâmetro POSTGRES_PASSWORD encontrado no arquivo .env.(dev/prod).db.
 

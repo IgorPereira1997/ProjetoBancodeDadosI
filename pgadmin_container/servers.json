@@ -1,6 +1,6 @@
 {
     "Servers": {
-        "inteletivo": {
+        "docker-postgres": {
             "Name": "transportadora_vietna",
             "Group": "Servers",
             "Port": 5432,
