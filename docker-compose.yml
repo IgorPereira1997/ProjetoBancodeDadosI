@@ -32,6 +32,7 @@ services:
     volumes:
       - ./pgadmin_container/servers.json:/pgadmin4/servers.json
       #- ./pgadmin_container/entrypoint.sh:/docker-entrypoint-initdb.d/10-entrypoint.sh
+      - ./pgadmin_container/storage/:/var/lib/pgadmin/storage/
     ports:
       - "8081:80"
     networks:

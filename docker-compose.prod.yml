@@ -32,6 +32,7 @@ services:
       - postgres_db
     volumes:
       - ./pgadmin_container/servers.json:/pgadmin4/servers.json
+      - ./pgadmin_container/storage/:/var/lib/pgadmin/storage/
     ports:
       - "8081:8081"
     expose:
