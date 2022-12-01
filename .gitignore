@@ -1,3 +1,4 @@
+.DS_Store
 .env*
 /postgres_container/pgdata/
 /nginx_container/logs/logs.log
