@@ -84,5 +84,9 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
     DEV:  docker compose -f docker-compose.yml up -d   
     PROD: docker compose -f docker-compose.prod.yml up -d
 
-7 - As informações para login do pgadmin são as descritas no arquivo .env.(dev/prod).pgadmin respectivamente por PGADMIN_DEFAULT_EMAIL e PGADMIN_DEFAULT_PASSWORD, e o acesso do servidor encontrado no pgadmin pode ser feito com o parâmetro POSTGRES_PASSWORD encontrado no arquivo .env.(dev/prod).db.
+7 - Para acessar o pgadmin4, acesse o link abaixo:
+
+    http://localhost:8081
+
+8 - As informações para login do pgadmin são as descritas no arquivo .env.(dev/prod).pgadmin respectivamente por PGADMIN_DEFAULT_EMAIL e PGADMIN_DEFAULT_PASSWORD, e o acesso do servidor encontrado no pgadmin pode ser feito com o parâmetro POSTGRES_PASSWORD encontrado no arquivo .env.(dev/prod).db.
 
