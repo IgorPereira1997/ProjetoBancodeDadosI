@@ -9,13 +9,13 @@ services:
     env_file:
         - ./.env.prod.db
     volumes:
-      - $PWD/postgres_container/pgdata:/var/lib/postgresql/data
-      - $PWD/postgres_container/backups/transportadora_vietna:/tmp/transportadora_vietna
-      - $PWD/postgres_container/feedDB.sh:/docker-entrypoint-initdb.d/10-init.sh
+      - ./postgres_container/pgdata:/var/lib/postgresql/data
+      - ./postgres_container/backups/transportadora_vietna:/tmp/transportadora_vietna
+      - ./postgres_container/feedDB.sh:/docker-entrypoint-initdb.d/10-init.sh
       # if you want some data restore, point to your backup
-      - $PWD/postgres_container/backups:/db_backup
+      - ./postgres_container/backups:/db_backup
       # point docker to directory with your config
-      - $PWD/postgres_container/configs:/db_config
+      - ./postgres_container/configs:/db_config
     networks:
       - backend
     ports:
