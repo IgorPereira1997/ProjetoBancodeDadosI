@@ -85,7 +85,7 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
 
 4 - (Opcional) Caso tenha modificado os dados do banco de dados, como usuário e nome da base de dados na instrução acima, proceda da seguinte forma:
 
-    3.1 - Altere as linhas 11 e 12 do arquivo feedDB.sh, colocando o nome de usuário escolhido na variável USER e após isto colocando o nome do banco de dados escolhido na variável DB, conforme exemplo abaixo.
+    Altere as linhas 11 e 12 do arquivo feedDB.sh, colocando o nome de usuário escolhido na variável USER e após isto colocando o nome do banco de dados escolhido na variável DB, conforme exemplo abaixo.
 
         Linha 11 - USER=nome_do_usuario_escolhido_no_dev_ou_prod
         Linha 12 - DB=nome_do_banco_de_dados
