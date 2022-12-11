@@ -8,6 +8,7 @@ VALUES
 INSERT INTO 
 	fornecedores 
 VALUES
+	(1, 'teste_deletar@gmail.com', 'Deletar01', '123456', 'Fornecedora Teste', 0, '11122233344455'),
 	(1000, 'FornecedoraMaringa@gmail.com', 'Maringa89', '123456', 'Fornecedora Maringa', 0, '11122233344455'),
 	(2000, 'FornecedoraUnica@gmail.com', 'Unica_@', '654321', 'Forncecedora Unica', 2, '99988877744455'),
 	(3000, 'FornecedoraSãoFrancisco@gmail.com', 'SãoFrancisco', '555888', 'Fornecedora São Francisco', 4, '44455566611122');
@@ -33,7 +34,9 @@ VALUES
 	(2, 'Cancelado'),
 	(3, 'Saiu para Entrega'),
 	(4, 'Aguardando Envio'),
-	(5, 'Entregue');
+	(5, 'Entregue'),
+	(6, 'Pagamento Negado'),
+	(7, 'Teste para deleção');
 
 INSERT INTO 
 	transportadoras 
