@@ -1,17 +1,32 @@
 # ProjetoBancodeDadosII
 
+
+
 Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universidade Federal do Vale do São Francisco (UNIVASF) e traz o banco de dados de um e-commerce entre distribuidoras, classificadas como fornecedores, e seus clientes, que podem ser mercados, clientes finais, entre outros.
 
 1 - Para fazer o uso e manipulação do projeto, faça o download e instalação do Docker:
     
-    1.1 - Instalção no Windows:
+    1.1 - Instalção no Windows 
         
         1.1.1 - Baixe o instaldor através do link a seguir: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
         
         1.1.2 - Abra uma janela do terminal do windows (cmd, powershell ou Windows Terminal) e digite o seguinte comando, para instalar o Windows Subsystem for Linux (WSL) necessário para o Docker:
             wsl --install
+
+        1.1.3 - [IMPORTANTE] Caso haja algum erro na inicialização do Ubuntu WSL, reinicie seu computador e entre na BIOS para fazer a habilitação da virtualização, através da opção Virtualization
+                Technology (VT-X) para processadores Intel e Modo SVM para processadores AMD.
         
-        1.1.3 - Após isto, inicie o instalador do Docker e configure-o conforme pedido pelo executável.
+        1.1.4 - Diferentes versões do Windows [IMPORTANTE]
+
+            1.1.4.1 Windows 10/11:
+                
+                Após isto, inicie o instalador do Docker e configure-o conforme pedido pelo executável, escolhendo Windows Subsystem For Linux (WSL) como tecnologia de virtualização.
+            
+            1.1.4.2 Windows 8.1 ou anterior:
+                 
+                 Após isto, inicie o instalador do Docker e configure-o conforme pedido pelo executável, escolhendo HyperV como tecnologia de virtualização.
+
+        1.1.5 - Ao terminar, reinicie o computador e inicie o docker, aceitando as condições pedidas pelo inicializador do Docker para aceitar a EULA e usar o produto.
     
     1.2 - Instalação no Linux:
 
@@ -62,7 +77,7 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
         # 10=DEBUG,20=INFO,25=SQL,30=WARNING,40=ERROR
         PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 40
 
-3 - Abra o terminal e vá ao diretório aonde baixou o projeto e rode os comandos abaixo, para resolução das permissões de todos os scripts presentes no projeto
+3 - [Exclusivo para Linux e macOS] Abra o terminal e vá ao diretório aonde baixou o projeto e rode os comandos abaixo, para resolução das permissões de todos os scripts presentes no projeto
     OBS.: Apenas sistemas UNIX rodam os comandos abaixo, ou seja, Linux ou macOS. Para Windows utilize o WSL:
 
     chmod +x fix_permissions_scripts.sh
@@ -70,10 +85,10 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
 
 4 - (Opcional) Caso tenha modificado os dados do banco de dados, como usuário e nome da base de dados na instrução acima, proceda da seguinte forma:
 
-    3.1 - Altere a linha 19, colocando após a instrução -U o nome de usuário escolhido e após o parâmetro -d o nome do banco de dados escolhido. Ex:
+    3.1 - Altere as linhas 11 e 12 do arquivo feedDB.sh, colocando o nome de usuário escolhido na variável USER e após isto colocando o nome do banco de dados escolhido na variável DB, conforme exemplo abaixo.
 
-        psql -U nome_usuario -d nome_banco -f /db_backup/db_bd2.sql
-
+        Linha 11 - USER=nome_do_usuario_escolhido_no_dev_ou_prod
+        Linha 12 - DB=nome_do_banco_de_dados
 
 5 - Altere o arquivo servers.json existente na pasta pgadmin_container com o usuário escolhido no arquivo .env.(dev/prod).db no parâmetro POSTGRES_USER, da seginte forma, sem o <>:
 
