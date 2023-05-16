@@ -5,7 +5,7 @@ services:
   postgres_db:
     container_name: postgres
     hostname: postgres
-    image: postgres:14.5-alpine
+    image: postgres:alpine
     env_file:
         - ./.env.dev.db
     volumes:
@@ -14,11 +14,11 @@ services:
       # if you want some data restore, point to your backup
       - ./postgres_container/backups:/db_backup
       # point docker to directory with your config
-      - ./postgres_container/configs:/db_config
+      #- ./postgres_container/configs:/db_config
     networks:
       - backend
     ports:
-      - 15433:5432
+      - "15433:5432"
 
   pgadmin:
     image: dpage/pgadmin4:latest
