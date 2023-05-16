@@ -10,25 +10,24 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
         
         1.1.1 - Baixe o instaldor através do link a seguir: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
         
-        1.1.2 - Abra uma janela do terminal do windows (cmd, powershell ou Windows Terminal) e digite o seguinte comando, para instalar o Windows Subsystem for Linux (WSL) necessário para o Docker:
+        1.1.2 - [IMPORTANTE] Caso utilize Windows 10 ou acima, abra uma janela do terminal do windows (cmd, powershell ou Windows Terminal) e digite o seguinte comando, para instalar o Windows Subsystem for Linux (WSL) necessário para o Docker:
             wsl --install
 
-        1.1.3 - [IMPORTANTE] Caso haja algum erro na inicialização do Ubuntu WSL, reinicie seu computador e entre na BIOS para fazer a habilitação da virtualização, através da opção Virtualization
-                Technology (VT-X) para processadores Intel e Modo SVM para processadores AMD.
+        OBS.: [IMPORTANTE] Caso haja algum erro na inicialização do Ubuntu WSL, reinicie seu computador e entre na BIOS para fazer a habilitação da virtualização, através da opção Virtualization Technology (VT-X) para processadores Intel e Modo SVM para processadores AMD.
         
-        1.1.4 - Diferentes versões do Windows [IMPORTANTE]
+        1.1.3 - Diferentes versões do Windows [IMPORTANTE]
 
-            1.1.4.1 Windows 10/11:
+            1.1.3.1 Windows 10/11:
                 
                 Após isto, inicie o instalador do Docker e configure-o conforme pedido pelo executável, escolhendo Windows Subsystem For Linux (WSL) como tecnologia de virtualização.
             
-            1.1.4.2 Windows 8.1 ou anterior:
+            1.1.3.2 Windows 8.1 ou anterior:
                  
                  Após isto, inicie o instalador do Docker e configure-o conforme pedido pelo executável, escolhendo HyperV como tecnologia de virtualização.
 
-        1.1.5 - Ao terminar, reinicie o computador e inicie o docker, aceitando as condições pedidas pelo inicializador do Docker para aceitar a EULA e usar o produto.
+        1.1.4 - Ao terminar, reinicie o computador e inicie o docker, aceitando as condições pedidas pelo inicializador do Docker para aceitar a EULA e usar o produto.
     
-    1.2 - Instalação no Linux:
+    1.2 - Instalação no Linux (Exemplificado para Distros baseadas em Debian, mude o packet manager de acordo com a sua distribuição linux):
 
         1.2.1 - Abra uma janela do terminal e instale o pré requisito do Docker para a plataforma, através do seguinte comando:
 

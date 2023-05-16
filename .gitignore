@@ -4,3 +4,4 @@
 /nginx_container/logs/logs.log
 /pgadmin_container/storage/*
 !/pgadmin_container/storage/.gitkeep
+env.zip
