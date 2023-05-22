@@ -62,14 +62,14 @@ Este é um projeto desenvolvido para a Disciplina Banco de Dados II da Universid
 
 2 - Crie os arquivos .env necessários para funcionamento dos containers docker, colocando os conteúdos descritos abaixo:
 
-    2.1 - .env.dev.db e .env.prod.db (coque as informações das base de dados de desenvolvimento e produção, de acordo com a necessidade):
+    2.1 - .env.dev.db e .env.prod.db (coque as informações das base de dados de desenvolvimento e produção, de acordo com a necessidade). Para fins de teste, há um arquivo .env.db.example para rodar o projeto inicialmente, sem modificações:
 
         POSTGRES_USER=tr_vietna
         POSTGRES_PASSWORD=admin
         DATABASE_HOST=postgres
         DATABASE_PORT=5432
 
-    2.2 - .env.dev.pgadmin e .env.prod.pgadmin (coloque as informações do pgadmin conforme for adequado ao desenvolvimento e à produção):
+    2.2 - .env.dev.pgadmin e .env.prod.pgadmin (coloque as informações do pgadmin conforme for adequado ao desenvolvimento e à produção). Para fins de teste, há um arquivo .env.pgadmin.example para rodar o projeto inicialmente, sem modificações:
 
         PGADMIN_DEFAULT_EMAIL: "transportadoravietna@gmail.com"
         PGADMIN_DEFAULT_PASSWORD: "admin"

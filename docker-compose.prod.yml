@@ -18,8 +18,13 @@ services:
       - ./postgres_container/configs:/db_config
     networks:
       - backend
+    #ports:
+    #  - 15433:5432
     ports:
-      - 15433:5432
+      - published: 15433
+        target: 5432
+        protocol: tcp
+        mode: host
 
   pgadmin:
     image: dpage/pgadmin4:latest
@@ -33,8 +38,13 @@ services:
     volumes:
       - ./pgadmin_container/servers.json:/pgadmin4/servers.json
       - ./pgadmin_container/storage/:/var/lib/pgadmin/storage/
+    #ports:
+    #  - "8081:8081"
     ports:
-      - "8081:8081"
+      - published: 8081
+        target: 8081
+        protocol: tcp
+        mode: host
     expose:
       - 8081
     networks:
