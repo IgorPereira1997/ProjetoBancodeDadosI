@@ -13,9 +13,7 @@
 	},
 	"postCreateCommand": "./fix_permissions_scripts.sh",
 	"forwardPorts": [
-		80,
-		5432,
-		15433,
+		//15433,
 		8081
 	],
 	"customizations": {
