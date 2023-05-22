@@ -14,7 +14,9 @@
 	"postCreateCommand": "./fix_permissions_scripts.sh",
 	"forwardPorts": [
 		80,
-		5432
+		5432,
+		15433,
+		8081
 	],
 	"customizations": {
 		// Configure properties specific to VS Code.
