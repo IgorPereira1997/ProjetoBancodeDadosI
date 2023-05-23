@@ -5,13 +5,16 @@ services:
   postgres_db:
     container_name: postgres
     hostname: postgres
-    image: postgres:alpine
+    #image: postgres:alpine
+    build:
+      context: ./postgres_container
+      dockerfile: Dockerfile
     env_file:
-        #- ./.env.dev.db
-        - ./.env.db.example
+      #- ./.env.dev.db
+      - ./.env.db.example
     volumes:
       - ./postgres_container/pgdata:/var/lib/postgresql/data
-      - ./postgres_container/feedDB.sh:/docker-entrypoint-initdb.d/10-init.sh
+      #- ./postgres_container/feedDB.sh:/docker-entrypoint-initdb.d/10-init.sh
       # if you want some data restore, point to your backup
       - ./postgres_container/backups:/db_backup
       # point docker to directory with your config
@@ -32,8 +35,8 @@ services:
     container_name: pgadmin
     restart: always
     env_file:
-        #- ./.env.dev.pgadmin
-        - ./.env.pgadmin.example
+      #- ./.env.dev.pgadmin
+      - ./.env.pgadmin.example
     depends_on:
       - postgres_db
     volumes:
@@ -50,6 +53,6 @@ services:
     networks:
       - backend
 
-networks: 
+networks:
   backend:
     driver: bridge

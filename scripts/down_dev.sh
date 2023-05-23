@@ -5,4 +5,4 @@ docker system prune -f -a
 docker volume prune -f
 docker network prune -f
 
-rm -rf postgres_container/pgdata/
+sudo rm -rf postgres_container/pgdata/
